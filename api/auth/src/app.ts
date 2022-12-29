@@ -2,10 +2,26 @@ import express, { Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
 import cors from 'cors'
 import cookieSession from 'cookie-session'
+import { includes } from 'ramda'
 
 const app = express()
 
-app.use(cors())
+const domainWhitelist = ['http://localhost:3000', 'http://localhost:8080']
+
+app.use(
+  process.env.NODE_ENV === 'test'
+    ? cors()
+    : cors({
+        origin: (origin, callback) => {
+          if (includes(origin, domainWhitelist)) {
+            callback(null, true)
+          } else {
+            callback(new Error())
+          }
+        },
+        credentials: true,
+      })
+)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

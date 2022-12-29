@@ -1,8 +1,9 @@
 import app from './app'
+const PORT = 4001 // Port is not used by any common applications so it's safe to use
 
 const start = async () => {
-  app.listen(3000, () => {
-    console.log(`Listening on port 3000`)
+  app.listen(PORT, () => {
+    console.log(`Auth service listening on port ${PORT}`)
   })
 }
 

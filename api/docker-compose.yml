@@ -5,17 +5,28 @@ services:
     build: ./appliances
     container_name: appliances
     ports:
-      - 8081:3000
+      - 8081:4000
     expose:
       - 8081
     volumes:
       - ./appliances/src:/home/app/src
-    command: npm run start
+    command: npm start
+  auth:
+    build: ./auth
+    container_name: auth
+    ports:
+      - 8082:4001
+    expose:
+      - 8082
+    volumes:
+      - ./auth/src:/home/app/src
+    command: npm start
 
   nginx:
     build: ./nginx
     container_name: nginx
     ports:
-      - 8080:8080
+      - 4000:4000
     links:
       - appliances
+      - auth
