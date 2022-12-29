@@ -1,12 +1,9 @@
-function ApplianceList() {
-  return null
-}
+import AppliancesList from './components/AppliancesList'
 
 function App() {
   return (
     <div className="App">
-      <h1>Appliances</h1>
-      <ApplianceList></ApplianceList>
+      <AppliancesList></AppliancesList>
     </div>
   )
 }
