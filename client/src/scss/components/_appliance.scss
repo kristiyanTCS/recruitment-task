@@ -1,0 +1,92 @@
+.appliance {
+  display: flex;
+  flex-direction: column;
+  // border-left: 0.15rem solid black;
+  width: fit-content;
+  background-color: lighten($color: gray, $amount: 40);
+  border-radius: 0.3rem;
+  padding: 0.5rem 2rem;
+  padding-bottom: 1.75rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem 0 rgba($color: black, $alpha: 0.3);
+
+  &__name {
+    margin-bottom: 0.3rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &__line {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 0rem;
+      }
+
+      &__name {
+        font-weight: 700;
+        margin-right: 0.5rem;
+      }
+
+      &__reboot {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.3rem;
+        align-self: center;
+
+        &--green {
+          background-color: green;
+        }
+
+        &--red {
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: 1rem;
+  }
+
+  &__button {
+    outline: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &--black {
+      border: 0.15rem solid black;
+      background-color: black;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background-color: white;
+        color: black;
+      }
+    }
+
+    &--red {
+      border: 0.15rem solid red;
+      background-color: red;
+      color: white;
+
+      &:hover,
+      &:focus {
+        background-color: white;
+        color: red;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.appliances {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+
+  &__list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3rem;
+
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

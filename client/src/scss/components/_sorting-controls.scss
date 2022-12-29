@@ -1,0 +1,43 @@
+.sorting-controls {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  &__sort-by,
+  &__order {
+    &__container {
+      margin-right: 3rem;
+
+      @media screen and (max-width: 1000px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__value {
+      outline: none;
+      border: 0.15rem solid black;
+      background-color: white;
+      padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      &--current,
+      &:hover,
+      &:focus {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}
