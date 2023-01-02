@@ -16,7 +16,7 @@ To run the server and client at the same time, execute the following command fro
 npm start
 ```
 
-The client will then be available on `http://localhost:3000` and the api on `http://localhost:4000`.
+The client will then be available on `http://localhost:3000` and the api on `http://localhost:4000`. Plese ensure that you have the latest version ofDocker engine running before starting the project.
 
 ### Running the backend API
 
