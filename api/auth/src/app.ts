@@ -6,7 +6,13 @@ import { includes } from 'ramda'
 
 const app = express()
 
-const domainWhitelist = ['http://localhost:3000', 'http://localhost:8080']
+const domainWhitelist = [
+  'http://localhost:3000',
+  'http://localhost:4000',
+  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'http://127.0.0.1:8080/',
+]
 
 app.use(
   process.env.NODE_ENV === 'test'
@@ -19,6 +25,13 @@ app.use(
             callback(new Error())
           }
         },
+        methods: ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'],
+        allowedHeaders: [
+          'Content-Type',
+          'Authorization',
+          'Cookie',
+          'Set-Cookie',
+        ],
         credentials: true,
       })
 )
